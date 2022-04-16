@@ -8,9 +8,16 @@ runuser -l root -c 'nohup /usr/local/x-ui/bin/xray-linux-amd64 -c /root/config.j
 firewall-cmd --zone=public --add-port=20800/tcp --permanent
 firewall-cmd --zone=public --add-port=20800/udp --permanent
 firewall-cmd --reload
+echo ""
+echo ""
+echo ""
 echo "============================="
 echo "默认IP=本机IP"
 echo "默认端口=20800"
 echo "默认加密协议=aes-256-gcm"
 echo "默认密码=aa321321"
 echo "============================="
+echo ""
+echo ""
+echo ""
+echo ""
