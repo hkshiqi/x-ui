@@ -11,7 +11,7 @@ chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
 chmod +x /etc/rc.d/rc.local
 echo /etc/socks5/qd.sh >> /etc/rc.d/rc.local
-.//etc/socks5/qd.sh
+./etc/socks5/qd.sh
 firewall-cmd --zone=public --add-port=20510/tcp --permanent
 firewall-cmd --zone=public --add-port=20510/udp --permanent
 firewall-cmd --reload
