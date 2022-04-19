@@ -7,7 +7,7 @@ chmod +x /etc/socks5
 rm -rf /etc/socks5/config.json
 wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/config.json
 chmod +x /etc/socks5/config.json
-runuser -l root -c 'nohup /usr/local/x-ui/bin/xray-linux-amd64 -c /etc/socks5/config.json &'
+runuser -l root -c '/usr/local/x-ui/bin/xray-linux-amd64 -c /etc/socks5/config.json &'
 
 firewall-cmd --zone=public --add-port=20510/tcp --permanent
 firewall-cmd --zone=public --add-port=20510/udp --permanent
