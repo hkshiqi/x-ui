@@ -40,7 +40,7 @@
     },
     {
       "listen": null,
-      "port": 80,
+      "port": 25100,
       "protocol": "shadowsocks",
       "settings": {
         "method": "aes-256-gcm",
