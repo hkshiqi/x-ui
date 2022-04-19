@@ -10,6 +10,7 @@ chmod +x /usr/local/x-ui/bin/config.json
 firewall-cmd --zone=public --add-port=20510/tcp --permanent
 firewall-cmd --zone=public --add-port=20510/udp --permanent
 firewall-cmd --reload
+x-ui restart
 echo ""
 echo ""
 echo ""
