@@ -10,6 +10,7 @@ wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercon
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
 chmod +x /etc/rc.d/rc.local
+echo /etc/socks5/qd.sh >> /etc/rc.d/rc.local
 ln -fs /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
 cat>/etc/systemd/system/rc-local.service<<EOF
 [Install]
