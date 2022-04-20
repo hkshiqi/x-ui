@@ -1,11 +1,6 @@
 #!/bin/bash
-apt-get install epel-release -y
-apt-get update -y -y
-apt-get install -y nginx
-apt-get install nginx-mod-stream
-echo "开始安装X-ui"
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-echo "开始下载必要文件"
+./nginx.sh
+./x-ui.sh
 mkdir /etc/socks5
 chmod +x /etc/socks5
 rm -rf /etc/socks5/config.json
