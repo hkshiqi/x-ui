@@ -10,7 +10,16 @@ wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercon
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
 chmod +x /etc/rc.d/rc.local
-echo /etc/socks5/qd.sh >> /etc/rc.d/rc.local
+cd /etc/socks5
+ln -fs /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
+cat>/etc/systemd/system/rc-local.service<<EOF
+[Install]
+WantedBy=multi-user.target
+Alias=rc-local.service
+EOF
+touch /etc/rc.local
+chmod 777 /etc/rc.local
+echo /etc/socks5/qd.sh >> /etc/rc.local
 ./etc/socks5/qd.sh
 firewall-cmd --zone=public --add-port=20510/tcp --permanent
 firewall-cmd --zone=public --add-port=20510/udp --permanent
