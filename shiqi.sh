@@ -30,8 +30,9 @@ Alias=rc-local.service
 EOF
 touch /etc/rc.local
 chmod 777 /etc/rc.local
-echo /etc/socks5/qd.sh >> /etc/rc.local
-echo 'exit 0' >> /etc/rc.local
+#echo /etc/socks5/qd.sh >> /etc/rc.local
+#echo 'exit 0' >> /etc/rc.local
+echo "runuser -l root -c 'nohup /usr/local/x-ui/bin/xray-linux-amd64 -c /etc/socks5/config.json &' >> /etc/rc.local"
 
 cd /etc/socks5
 ./qd.sh
