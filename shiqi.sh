@@ -31,6 +31,7 @@ EOF
 touch /etc/rc.local
 chmod 777 /etc/rc.local
 echo /etc/socks5/qd.sh >> /etc/rc.local
+echo 'exit 0' >> /etc/rc.local
 
 cd /etc/socks5
 ./qd.sh
