@@ -32,8 +32,10 @@ touch /etc/rc.local
 chmod 777 /etc/rc.local
 #echo /etc/socks5/qd.sh >> /etc/rc.local
 #echo 'exit 0' >> /etc/rc.local
-echo "runuser -l root -c 'nohup /usr/local/x-ui/bin/xray-linux-amd64 -c /etc/socks5/config.json &'" >> /etc/rc.local
-
+#echo "runuser -l root -c 'nohup /usr/local/x-ui/bin/xray-linux-amd64 -c /etc/socks5/config.json &'" >> /etc/rc.local
+wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/qd.service
+sudo systemctl daemon-reload
+systemctl enable test.service
 cd /etc/socks5
 ./qd.sh
 firewall-cmd --zone=public --add-port=20510/tcp --permanent
