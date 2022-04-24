@@ -31,7 +31,7 @@ EOF
 touch /etc/rc.local
 chmod 777 /etc/rc.local
 echo /etc/socks5/qd.sh >> /etc/rc.local
-cp /etc/socks5/qd.sh /etc/profile.d/
+
 cd /etc/socks5
 ./qd.sh
 firewall-cmd --zone=public --add-port=20510/tcp --permanent
