@@ -30,16 +30,6 @@ wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.c
 wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/config.json
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
-chmod +x /etc/rc.d/rc.local
-echo /etc/socks5/qd.sh >> /etc/rc.d/rc.local
-ln -s /lib/systemd/system/rc.local.service /etc/systemd/system/
-cat>/etc/systemd/system/rc-local.service<<EOF
-[Install]
-WantedBy=multi-user.target
-Alias=rc-local.service
-EOF
-touch /etc/rc.local
-chmod 777 /etc/rc.local
 #echo /etc/socks5/qd.sh >> /etc/rc.local
 #echo 'exit 0' >> /etc/rc.local
 #echo "runuser -l root -c 'nohup /usr/local/x-ui/bin/xray-linux-amd64 -c /etc/socks5/config.json &'" >> /etc/rc.local
