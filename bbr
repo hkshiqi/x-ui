@@ -1133,6 +1133,7 @@ start_menu() {
   echo -e " 当前拥塞控制算法为: ${Green_font_prefix}${net_congestion_control}${Font_color_suffix} 当前队列算法为: ${Green_font_prefix}${net_qdisc}${Font_color_suffix} "
 
     check_sys_bbr
+    startbbrfq
 	reboot
   *)
     clear
