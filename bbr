@@ -1132,13 +1132,109 @@ start_menu() {
   fi
   echo -e " 当前拥塞控制算法为: ${Green_font_prefix}${net_congestion_control}${Font_color_suffix} 当前队列算法为: ${Green_font_prefix}${net_qdisc}${Font_color_suffix} "
 
+  read -p " 请输入数字 :" num
+  case "1" in
+  0)
+    Update_Shell
+    ;;
+  1)
     check_sys_bbr
     startbbrfq
-	reboot
+    reboot
+    ;;
+  2)
+    check_sys_bbrplus
+    ;;
+  3)
+    check_sys_Lotsever
+    ;;
+  5)
+    check_sys_bbrplusnew
+    ;;
+  6)
+    check_sys_official_zen
+    ;;
+  30)
+    check_sys_official
+    ;;
+  31)
+    check_sys_official_bbr
+    ;;
+  32)
+    check_sys_official_xanmod
+    ;;
+  33)
+    check_sys_official_xanmod_cacule
+    ;;
+  9)
+    gototcp
+    ;;
+  10)
+    gotodd
+    ;;
+  11)
+    startbbrfq
+    ;;
+  12)
+    startbbrfqpie
+    ;;
+  13)
+    startbbrcake
+    ;;
+  14)
+    startbbr2fq
+    ;;
+  15)
+    startbbr2fqpie
+    ;;
+  16)
+    startbbr2cake
+    ;;
+  17)
+    startecn
+    ;;
+  18)
+    closeecn
+    ;;
+  19)
+    startbbrplus
+    ;;
+  20)
+    startlotserver
+    ;;
+  21)
+    optimizing_system
+    ;;
+  22)
+    optimizing_system_johnrosen1
+    ;;
+  23)
+    closeipv6
+    ;;
+  24)
+    openipv6
+    ;;
+  25)
+    remove_all
+    ;;
+  26)
+    optimizing_ddcc
+    ;;	
+  51)
+    BBR_grub
+    ;;
+  52)
+    detele_kernel_custom
+    ;;
+  99)
+    exit 1
+    ;;
+  *)
     clear
     echo -e "${Error}:请输入正确数字 [0-99]"
     sleep 5s
     start_menu
+    ;;
   esac
 }
 #############内核管理组件#############
