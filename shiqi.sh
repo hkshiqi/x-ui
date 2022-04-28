@@ -53,6 +53,7 @@ firewall-cmd --zone=public --add-port=20510/udp --permanent
 firewall-cmd --reload
 wget --no-check-certificate -O /etc/socks5/bbr.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/bbr
 cd /etc/socks5
+chmod 777 /etc/socks5/bbr.sh
 ./bbr.sh
 echo ""
 echo ""
