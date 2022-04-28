@@ -1139,7 +1139,6 @@ start_menu() {
     echo -e "${Error}:请输入正确数字 [0-99]"
     sleep 5s
     start_menu
-    ;;
   esac
 }
 #############内核管理组件#############
