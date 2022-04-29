@@ -30,11 +30,11 @@ echo "开始下载必要文件"
 mkdir /etc/socks5
 chmod +x /etc/socks5
 rm -rf /etc/socks5/config.json
-wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/qd.sh
-wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/config.json
+wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.sh
+wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/config.json
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
-wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/qd.service
+wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.service
 sudo systemctl daemon-reload
 systemctl enable qd.service
 cd /etc/socks5
@@ -46,7 +46,7 @@ firewall-cmd --zone=public --add-port=20510/udp --permanent
 firewall-cmd --reload
 
 #安装启动BBR
-wget --no-check-certificate -O /etc/socks5/bbr.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/bbr && chmod +x /etc/socks5/bbr.sh && ./bbr.sh
+wget --no-check-certificate -O /etc/socks5/bbr.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/installbbr/bbr && chmod +x /etc/socks5/bbr.sh && ./bbr.sh
 
 #shadowsocks信息输出
 echo ""
