@@ -10,6 +10,29 @@ modprobe ip_conntrack
 echo 1000000 >/proc/sys/net/nf_conntrack_max
 lsmod |grep conntrack
 
+
+#添加分流用户
+echo "注册用户v1"
+useradd -r -m -s /bin/bash v1
+echo "注册用户v2"
+useradd -r -m -s /bin/bash v2
+echo "注册用户v3"
+useradd -r -m -s /bin/bash v3
+echo "注册用户v4"
+useradd -r -m -s /bin/bash v4
+echo "注册用户v5"
+useradd -r -m -s /bin/bash v5
+echo "注册用户v6"
+useradd -r -m -s /bin/bash v6
+echo "注册用户v7"
+useradd -r -m -s /bin/bash v7
+echo "注册用户v8"
+useradd -r -m -s /bin/bash v8
+echo "注册用户v9"
+useradd -r -m -s /bin/bash v9
+
+
+
 #安装nginx
 apt-get install epel-release -y
 apt-get update -y -y
@@ -47,6 +70,7 @@ firewall-cmd --reload
 
 #安装启动BBR
 wget --no-check-certificate -O /etc/socks5/bbr.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/installbbr/bbr && chmod +x /etc/socks5/bbr.sh && ./bbr.sh
+
 
 #shadowsocks信息输出
 echo ""
