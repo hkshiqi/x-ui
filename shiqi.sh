@@ -55,6 +55,15 @@ chmod +x /etc/socks5
 rm -rf /etc/socks5/config.json
 wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.sh
 wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/config.json
+wget --no-check-certificate -O /etc/socks5/sk1.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk1.json
+wget --no-check-certificate -O /etc/socks5/sk2.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk2.json
+wget --no-check-certificate -O /etc/socks5/sk3.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk3.json
+wget --no-check-certificate -O /etc/socks5/sk4.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk4.json
+wget --no-check-certificate -O /etc/socks5/sk5.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk5.json
+wget --no-check-certificate -O /etc/socks5/sk6.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk6.json
+wget --no-check-certificate -O /etc/socks5/sk7.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk7.json
+wget --no-check-certificate -O /etc/socks5/sk8.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk8.json
+wget --no-check-certificate -O /etc/socks5/sk9.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk9.json
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
 wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.service
