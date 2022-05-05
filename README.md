@@ -2,6 +2,8 @@
 
 静默安装shadowsocks+BBR+nginx+开机启动
 
+弹性IP通用版
+
 安装命令
 
 ```
