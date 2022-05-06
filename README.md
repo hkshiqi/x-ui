@@ -4,8 +4,14 @@
 
 弹性IP通用版
 
-安装命令
+亚马逊安装命令
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/hkshiqi/x-ui/main/shiqi.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/hkshiqi/x-ui/main/amazon/install.sh)
+```
+
+微软安装命令
+
+```
+bash <(curl -Ls https://raw.githubusercontent.com/hkshiqi/x-ui/main/Azure/Install.sh)
 ```
