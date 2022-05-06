@@ -15,11 +15,11 @@ apt-get install epel-release -y
 apt-get update -y -y
 apt-get install -y nginx
 apt-get install nginx-mod-stream
-wget --no-check-certificate -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/hkshiqi/x-ui/main/nginx/nginx.conf
+wget --no-check-certificate -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/hkshiqi/x-ui/main/Azure/nginx/nginx.conf
 chmod 777 /etc/nginx/nginx.conf
 mkdir /etc/nginx/zf.d
 chmod 777 /etc/nginx/zf.d
-wget --no-check-certificate -O /etc/nginx/zf.d/trujan.conf https://raw.githubusercontent.com/hkshiqi/x-ui/main/nginx/zf.d/trojan.conf
+wget --no-check-certificate -O /etc/nginx/zf.d/trujan.conf https://raw.githubusercontent.com/hkshiqi/x-ui/main/Azure/nginx/zf.d/trojan.conf
 chmod 777 /etc/nginx/zf.d/trujan.conf
 systemctl restart nginx
 
@@ -30,11 +30,11 @@ echo "开始下载必要文件"
 mkdir /etc/socks5
 chmod +x /etc/socks5
 rm -rf /etc/socks5/config.json
-wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.sh
-wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/config.json
+wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/Azure/socks5/qd.sh
+wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/Azure/socks5/config.json
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
-wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.service
+wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/Azure/socks5/qd.service
 sudo systemctl daemon-reload
 systemctl enable qd.service
 cd /etc/socks5
