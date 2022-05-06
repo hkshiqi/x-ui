@@ -1,0 +1,11 @@
+[Unit]
+Description=test
+Requires=network-online.target #若需要联网后启动的话，则需要加入该参数
+After=network-online.target #若需要联网后启动的话，则需要加入该参数
+
+[Service]
+Type=forking
+ExecStart=/bin/bash /etc/socks5/qd.sh #执行的内容是脚本test.sh中的内容，其中包括它的绝对地址
+
+[Install]
+WantedBy=multi-user.target
