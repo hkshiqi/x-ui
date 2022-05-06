@@ -10,29 +10,6 @@ modprobe ip_conntrack
 echo 1000000 >/proc/sys/net/nf_conntrack_max
 lsmod |grep conntrack
 
-
-#添加分流用户
-echo "注册用户v1"
-useradd -r -m -s /bin/bash v1
-echo "注册用户v2"
-useradd -r -m -s /bin/bash v2
-echo "注册用户v3"
-useradd -r -m -s /bin/bash v3
-echo "注册用户v4"
-useradd -r -m -s /bin/bash v4
-echo "注册用户v5"
-useradd -r -m -s /bin/bash v5
-echo "注册用户v6"
-useradd -r -m -s /bin/bash v6
-echo "注册用户v7"
-useradd -r -m -s /bin/bash v7
-echo "注册用户v8"
-useradd -r -m -s /bin/bash v8
-echo "注册用户v9"
-useradd -r -m -s /bin/bash v9
-
-
-
 #安装nginx
 apt-get install epel-release -y
 apt-get update -y -y
@@ -55,15 +32,6 @@ chmod +x /etc/socks5
 rm -rf /etc/socks5/config.json
 wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.sh
 wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/config.json
-wget --no-check-certificate -O /etc/socks5/sk1.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk1.json
-wget --no-check-certificate -O /etc/socks5/sk2.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk2.json
-wget --no-check-certificate -O /etc/socks5/sk3.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk3.json
-wget --no-check-certificate -O /etc/socks5/sk4.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk4.json
-wget --no-check-certificate -O /etc/socks5/sk5.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk5.json
-wget --no-check-certificate -O /etc/socks5/sk6.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk6.json
-wget --no-check-certificate -O /etc/socks5/sk7.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk7.json
-wget --no-check-certificate -O /etc/socks5/sk8.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk8.json
-wget --no-check-certificate -O /etc/socks5/sk9.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk9.json
 chmod +x /etc/socks5/qd.sh
 chmod +x /etc/socks5/config.json
 wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.service
