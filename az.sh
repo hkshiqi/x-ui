@@ -1,0 +1,97 @@
+#!/bin/bash
+#系统性能优化
+echo 500000 >/proc/sys/kernel/pid_max
+echo 500000 >/proc/sys/kernel/threads-max
+echo 500000 >/proc/sys/vm/max_map_count
+echo 500000 >/proc/sys/fs/file-max
+ulimit -SHn 10240
+ulimit -SHs unlimited
+modprobe ip_conntrack
+echo 1000000 >/proc/sys/net/nf_conntrack_max
+lsmod |grep conntrack
+
+
+#添加分流用户
+echo "注册用户v1"
+useradd -r -m -s /bin/bash v1
+echo "注册用户v2"
+useradd -r -m -s /bin/bash v2
+echo "注册用户v3"
+useradd -r -m -s /bin/bash v3
+echo "注册用户v4"
+useradd -r -m -s /bin/bash v4
+echo "注册用户v5"
+useradd -r -m -s /bin/bash v5
+echo "注册用户v6"
+useradd -r -m -s /bin/bash v6
+echo "注册用户v7"
+useradd -r -m -s /bin/bash v7
+echo "注册用户v8"
+useradd -r -m -s /bin/bash v8
+echo "注册用户v9"
+useradd -r -m -s /bin/bash v9
+
+
+
+#安装nginx
+apt-get install epel-release -y
+apt-get update -y -y
+apt-get install -y nginx
+apt-get install nginx-mod-stream
+wget --no-check-certificate -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/hkshiqi/x-ui/main/nginx/nginx.conf
+chmod 777 /etc/nginx/nginx.conf
+mkdir /etc/nginx/zf.d
+chmod 777 /etc/nginx/zf.d
+wget --no-check-certificate -O /etc/nginx/zf.d/trujan.conf https://raw.githubusercontent.com/hkshiqi/x-ui/main/nginx/zf.d/trojan.conf
+chmod 777 /etc/nginx/zf.d/trujan.conf
+systemctl restart nginx
+
+#安装X-UI
+echo "开始安装X-ui"
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+echo "开始下载必要文件"
+mkdir /etc/socks5
+chmod +x /etc/socks5
+rm -rf /etc/socks5/config.json
+wget --no-check-certificate -O /etc/socks5/qd.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.sh
+wget --no-check-certificate -O /etc/socks5/config.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/config.json
+wget --no-check-certificate -O /etc/socks5/sk1.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk1.json
+wget --no-check-certificate -O /etc/socks5/sk2.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk2.json
+wget --no-check-certificate -O /etc/socks5/sk3.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk3.json
+wget --no-check-certificate -O /etc/socks5/sk4.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk4.json
+wget --no-check-certificate -O /etc/socks5/sk5.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk5.json
+wget --no-check-certificate -O /etc/socks5/sk6.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk6.json
+wget --no-check-certificate -O /etc/socks5/sk7.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk7.json
+wget --no-check-certificate -O /etc/socks5/sk8.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk8.json
+wget --no-check-certificate -O /etc/socks5/sk9.json https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/sk9.json
+chmod +x /etc/socks5/qd.sh
+chmod +x /etc/socks5/config.json
+wget --no-check-certificate -O /lib/systemd/system/qd.service https://raw.githubusercontent.com/hkshiqi/x-ui/main/socks5/qd.service
+sudo systemctl daemon-reload
+systemctl enable qd.service
+cd /etc/socks5
+./qd.sh
+
+#防火墙放行端口
+firewall-cmd --zone=public --add-port=20510/tcp --permanent
+firewall-cmd --zone=public --add-port=20510/udp --permanent
+firewall-cmd --reload
+
+#安装启动BBR
+wget --no-check-certificate -O /etc/socks5/bbr.sh https://raw.githubusercontent.com/hkshiqi/x-ui/main/installbbr/bbr && chmod +x /etc/socks5/bbr.sh && ./bbr.sh
+
+
+#shadowsocks信息输出
+echo ""
+echo ""
+echo ""
+echo "============================="
+echo "默认IP=本机IP"
+echo "默认端口=20001"
+echo "默认加密协议=aes-256-gcm"
+echo "默认密码=aa321321"
+echo "============================="
+echo ""
+echo ""
+echo ""
+echo ""
